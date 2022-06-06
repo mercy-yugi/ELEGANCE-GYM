@@ -31,6 +31,22 @@ class Login_activity : AppCompatActivity() {
             startActivity(intent)
         }
 
+    btnLogin1.setOnClickListener {
+        checkLogin()
+    }
+    }
+    fun checkLogin(){
+        var email= etEmail.text.toString()
+        var password=etPassword.text.toString()
+
+        if (email.isBlank()){
+            tilEmail.error="email required"
+        }
+        if (password.isBlank()){
+            tilPassword.error="password required"
+        }
+
+
     }
 
 }

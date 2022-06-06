@@ -42,6 +42,45 @@ class SignUp_activity : AppCompatActivity() {
             val intent = Intent(this, Login_activity::class.java)
             startActivity(intent)
         }
+        btnSignUp1.setOnClickListener {
+            validateSignup1()
+        }
+    }
+    fun validateSignup1(){
+        var error=false
+        tilEmail.error=null
+        tilPassword.error=null
+        var Firstname=etFirstname.text.toString()
+        var Lastname= etLastname .text.toString()
+        var Email=etEmail1.text.toString()
+        var Password=etPassword1.text.toString()
+        var Reenter=etReenter.text.toString()
+        if (Firstname.isBlank()){
+            tilFirstname.error="firstname is required"
+            error=true}
+
+        if (Lastname.isBlank()){
+            tilLastname.error="Lastname is required"
+            error=true
+        }
+        if (Email.isBlank()){
+            tilEmail.error="Email is required"
+            error=true
+        }
+        if (Password.isBlank()){
+            tilPassword.error="Password is required"
+            error=true
+        }
+        if (Reenter.isBlank()){
+            tilReenter.error="PasswordConfirmation is required"
+            error=true
+        }
+
+        if (!error){
+
+        }
+    }
+
     }
 
 }
