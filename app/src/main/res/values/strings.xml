@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Elegance_Gym</string>
+    <string name="plan">plan</string>
+    <string name="track">track</string>
+    <string name="profile">profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="trackfragment">trackfragment</string>
+    <string name="planfragment">planfragment</string>
+    <string name="profilefragment">profilefragment</string>
 </resources>

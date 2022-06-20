@@ -3,84 +3,65 @@ package com.yugi.elegance_gym
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.EditText
 import com.google.android.material.textfield.TextInputLayout
+import com.yugi.elegance_gym.databinding.ActivityLoginBinding
+import com.yugi.elegance_gym.databinding.ActivitySignUpBinding
 
 class SignUp_activity : AppCompatActivity() {
-    lateinit var etFirstname:EditText
-    lateinit var etLastname:EditText
-    lateinit var etPassword1:EditText
-    lateinit var etReenter:EditText
-    lateinit var etEmail1:EditText
-    lateinit var btnSignUp1:Button
-    lateinit var tilFirstname:TextInputLayout
-    lateinit var tilLastname:TextInputLayout
-    lateinit var tilPassword:TextInputLayout
-    lateinit var tilReenter:TextInputLayout
-    lateinit var tilEmail:TextInputLayout
+    lateinit var binding: ActivitySignUpBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+        binding= ActivitySignUpBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
-        btnSignUp1=findViewById(R.id.btnSignUp1)
-        etFirstname=findViewById(R.id.etFirstname)
-        etLastname=findViewById(R.id.etLastname)
-        etPassword1=findViewById(R.id.etPassword1)
-        etReenter=findViewById(R.id.etReenter)
-        etEmail1=findViewById(R.id.etEmail1)
-        tilFirstname=findViewById(R.id.tilFirstname)
-        tilLastname=findViewById(R.id.tilLastname)
-        tilPassword=findViewById(R.id.tilPassword)
-        tilReenter=findViewById(R.id.tilReenter)
-        tilEmail=findViewById(R.id.tilEmail)
-
-
-        btnSignUp1= findViewById(R.id.btnSignUp1)
-        btnSignUp1.setOnClickListener {
-            val intent = Intent(this, Login_activity::class.java)
+        binding.btnSignUp1.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-        btnSignUp1.setOnClickListener {
+        binding.btnSignUp1.setOnClickListener {
             validateSignup1()
         }
     }
     fun validateSignup1(){
         var error=false
-        tilEmail.error=null
-        tilPassword.error=null
-        var Firstname=etFirstname.text.toString()
-        var Lastname= etLastname .text.toString()
-        var Email=etEmail1.text.toString()
-        var Password=etPassword1.text.toString()
-        var Reenter=etReenter.text.toString()
+        binding.tilEmail1.error=null
+        binding.tilPassword.error=null
+        val Firstname=binding.etFirstname.text.toString()
+        val Lastname= binding.etLastname .text.toString()
+        val Email=binding.etEmail1.text.toString()
+        val Password=binding.etPassword1.text.toString()
+        val Reenter=binding.etReenter.text.toString()
         if (Firstname.isBlank()){
-            tilFirstname.error="firstname is required"
+            binding.tilFirstname.error="firstname is required"
             error=true}
 
         if (Lastname.isBlank()){
-            tilLastname.error="Lastname is required"
+            binding.tilLastname.error="Lastname is required"
             error=true
         }
         if (Email.isBlank()){
-            tilEmail.error="Email is required"
+            binding.tilEmail1.error="Email is required"
             error=true
         }
         if (Password.isBlank()){
-            tilPassword.error="Password is required"
+            binding.tilPassword.error="Password is required"
             error=true
         }
         if (Reenter.isBlank()){
-            tilReenter.error="PasswordConfirmation is required"
+            binding.tilReenter.error="PasswordConfirmation is required"
             error=true
         }
 
-        if (!error){
+        when {
+            !error -> {
 
+            }
         }
     }
 
     }
 
-}

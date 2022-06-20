@@ -6,27 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".Landingpage_activity">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnvHome"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/landing" />
+        app:menu="@menu/bottom_nav_menu"/>
 
-    <TextView
-        android:id="@+id/tvLand"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcvHome"
+        android:name="com.yugi.elegance_gym.planfragment"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="THIS IS THE LANDING PAGE."
-        android:textColor="#F60456"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bnvHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

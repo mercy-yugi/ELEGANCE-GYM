@@ -141,7 +141,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilEmail1"
-        app:layout_constraintVertical_bias="0.176" />
+        app:layout_constraintVertical_bias="0.445" />
 
     <TextView
         android:id="@+id/textView3"
@@ -208,5 +208,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tilFirstname"
         app:srcCompat="@drawable/ic_baseline_person_24" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="I agree to terms and condition provided by this organization"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUp1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

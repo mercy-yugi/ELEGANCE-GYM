@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#80AF3D"
     android:backgroundTint="#B2351822"
-    tools:context=".Login_activity">
+    tools:context=".LoginActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilEmail"
