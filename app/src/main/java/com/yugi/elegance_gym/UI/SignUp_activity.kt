@@ -1,14 +1,12 @@
-package com.yugi.elegance_gym
+package com.yugi.elegance_gym.retrofit
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.Button
-import android.widget.EditText
-import com.google.android.material.textfield.TextInputLayout
-import com.yugi.elegance_gym.databinding.ActivityLoginBinding
+import com.yugi.elegance_gym.ApiClient
+import com.yugi.elegance_gym.ApiInterface
 import com.yugi.elegance_gym.databinding.ActivitySignUpBinding
+import com.yugi.elegance_gym.models.RegisterRequest
 
 class SignUp_activity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpBinding
@@ -28,13 +26,16 @@ class SignUp_activity : AppCompatActivity() {
     }
     fun validateSignup1(){
         var error=false
-        binding.tilEmail1.error=null
+        null.also { binding.tilEmail1.error = it }
         binding.tilPassword.error=null
         val Firstname=binding.etFirstname.text.toString()
         val Lastname= binding.etLastname .text.toString()
         val Email=binding.etEmail1.text.toString()
         val Password=binding.etPassword1.text.toString()
         val Reenter=binding.etReenter.text.toString()
+
+        var error=false
+
         if (Firstname.isBlank()){
             binding.tilFirstname.error="firstname is required"
             error=true}
@@ -56,12 +57,15 @@ class SignUp_activity : AppCompatActivity() {
             error=true
         }
 
-        when {
-            !error -> {
+       if (!error){
+           var registerRequest=RegisterRequest(Firstname,Lastname,Email,Password,Phonenumber)
+           makeRegistrationREquest(registerRequest)
+       }
 
-            }
-        }
+
     }
 
-    }
+open class AppCompatActivity
+
+
 

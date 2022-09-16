@@ -1,13 +1,8 @@
-package com.yugi.elegance_gym
+package com.yugi.elegance_gym.retrofit
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import com.google.android.material.textfield.TextInputLayout
 import com.yugi.elegance_gym.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {

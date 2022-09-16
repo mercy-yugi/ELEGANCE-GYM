@@ -1,10 +1,10 @@
-package com.yugi.elegance_gym
+package com.yugi.elegance_gym.retrofit
 
-import android.content.ClipData
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentContainerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.yugi.elegance_gym.R
 
 class Landingpage_activity : AppCompatActivity() {
     lateinit var bnvHome:BottomNavigationView
@@ -22,20 +22,23 @@ class Landingpage_activity : AppCompatActivity() {
     fun setupBottomNav(){
         bnvHome.setOnItemSelectedListener{item->
             when(item.itemId){
-                R.id.plan->{
+                R.id.plan ->{
                     val transaction=supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.fcvHome,planfragment())
+                    transaction.replace(R.id.fcvHome, planfragment())
                     transaction.commit()
                     true
                 }
-                R.id.track->{
+                R.id.track ->{
                     val transaction=supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.fcvHome,TrackFragment2())
+                    transaction.replace(R.id.fcvHome, TrackFragment2())
                     transaction.commit()
                     true
                 }
-                R.id.profile->{
-                    supportFragmentManager.beginTransaction().replace(R.id.fcvHome,profileFragment())
+                R.id.profile ->{
+                    supportFragmentManager.beginTransaction().replace(
+                        R.id.fcvHome,
+                        profileFragment()
+                    )
                     true
                 }
                 else->false
