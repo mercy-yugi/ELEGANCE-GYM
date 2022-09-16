@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Elegance_Gym">
         <activity
-            android:name=".Landingpage_activity"
+            android:name=".UI.Landingpage_activity"
             android:exported="false" />
         <activity
-            android:name=".SignUp_activity"
+            android:name=".UI.SignUp_activity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".UI.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".UI.SplashActivity"
             android:exported="true"
            android:theme="@style/splashtheme" >
             <intent-filter>

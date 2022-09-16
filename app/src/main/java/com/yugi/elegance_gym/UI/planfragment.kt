@@ -1,4 +1,4 @@
-package com.yugi.elegance_gym.retrofit
+package com.yugi.elegance_gym.UI
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

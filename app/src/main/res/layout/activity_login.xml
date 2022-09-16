@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="#80AF3D"
     android:backgroundTint="#B2351822"
-    tools:context=".LoginActivity">
+    android:visibility="visible"
+    tools:context=".UI.LoginActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilEmail"
@@ -56,9 +57,9 @@
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.5"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="468dp" />
+        app:layout_constraintGuide_begin="468dp"
+        app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -120,4 +121,17 @@
         app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toEndOf="@+id/tvMessage"
         app:layout_constraintTop_toTopOf="@+id/tvMessage" />
+
+    <ProgressBar
+        android:id="@+id/pbbar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.712" />
 </androidx.constraintlayout.widget.ConstraintLayout>

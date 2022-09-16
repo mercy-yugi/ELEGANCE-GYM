@@ -1,3 +1,6 @@
-package com.yugi.elegance_gym.UI
+package com.yugi.elegance_gym.models
 
-data class LoginResponse()
+data class LoginRequest(
+    var message:String,
+    var password:String
+)
