@@ -13,6 +13,7 @@ import com.yugi.elegance_gym.models.LoginRequest
 import com.yugi.elegance_gym.models.LoginResponse
 import com.yugi.elegance_gym.Api.ApiClient
 import com.yugi.elegance_gym.Api.ApiInterface
+import com.yugi.elegance_gym.Util.Constants
 import com.yugi.elegance_gym.ViewModel.UserViewModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -78,8 +79,9 @@ class LoginActivity : AppCompatActivity() {
 
     fun saveLoginDetails(loginResponse: LoginResponse){
         val editor=sharedPrefs.edit()
-        editor.putString("ACCESS_TOKEN",loginResponse.access_token)
-        editor.putString("PROFILE_ID",loginResponse.profile_id)
+        val token="Bearer ${loginResponse.access_token}"
+        editor.putString(Constants.accessToken,token)
+        editor.putString(Constants.profileId,loginResponse.profile_id)
         editor.putString("USER_ID",loginResponse.user_id)
         editor.apply()
     }
